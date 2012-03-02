@@ -11,8 +11,7 @@ Modify your `.repo/local_manifest.xml` as follows:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
-    <remote fetch="ssh://git@github.com/" name="epicteam" />
-    <project name="EpicCM/epictools.git" path="epictools" remote="epicteam" revision="ics" />
+    <project name="EpicCM/epictools.git" path="epictools" remote="github" revision="ics" />
     <project name="CyanogenMod/android_kernel_samsung_victory" path="kernel/samsung/victory" remote="github" revision="ics" />
     <project name="CyanogenMod/android_device_samsung_epicmtd" path="device/samsung/epicmtd" remote="github" />
   </manifest>

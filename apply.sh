@@ -65,7 +65,7 @@ cdb
 
 repo start auto kernel/samsung/victory
 cdv kernel/samsung/victory
-echo "### Patching make-kexec-cwm-test-zip.sh http://review.cyanogenmod.com/#change,13090"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/90/13090/1 && git cherry-pick FETCH_HEAD
+echo "### Patching make-kexec-cwm-test-zip.sh http://review.cyanogenmod.com/#change,13149"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/49/13149/4 && git cherry-pick FETCH_HEAD
 cdb
 

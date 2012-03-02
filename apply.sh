@@ -53,6 +53,10 @@ apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/frameworks_base_debug.di
 git add media/java/android/media/MediaScanner.java
 git add media/libmedia/MediaScanner.cpp
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
+echo "### Test Patch: CDMA 1 signal bar threshold s/100/105/ to match Samsung"
+apply_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm.patch
+git add telephony/java/android/telephony/SignalStrength.java
+git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 
 repo start auto packages/providers/MediaProvider

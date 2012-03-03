@@ -48,6 +48,8 @@ cdb
 
 repo start auto frameworks/base 
 cdv frameworks/base
+echo "### SamsungRIL: Fixes for CDMA data reconnection failures due to stale pppd. http://review.cyanogenmod.com/13230"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_frameworks_base refs/changes/30/13230/1 && git cherry-pick FETCH_HEAD
 echo "### Debug disappearing sdcard ringtones"
 apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/frameworks_base_debug.diff
 git add media/java/android/media/MediaScanner.java

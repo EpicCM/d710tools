@@ -46,6 +46,11 @@ git add prebuilt/common/bootanimation.zip
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 
+repo start auto device/samsung/epicmtd
+cdv device/samsung/epicmtd
+echo ### removes cflag defines ###
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/35/13035/6 && git cherry-pick FETCH_HEAD
+cdb
 repo start auto frameworks/base 
 cdv frameworks/base
 echo "### SamsungRIL: Fixes for CDMA data reconnection failures due to stale pppd. http://review.cyanogenmod.com/13230"

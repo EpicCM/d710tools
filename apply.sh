@@ -65,7 +65,9 @@ repo start auto packages/providers/MediaProvider
 cdv packages/providers/MediaProvider
 echo "### Debug disappearing sdcard ringtones"
 apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug.diff
+apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff
 git add src/com/android/providers/media/MediaScannerService.java
+git add src/com/android/providers/media/MediaProvider.java
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 

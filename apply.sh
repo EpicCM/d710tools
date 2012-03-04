@@ -88,6 +88,10 @@ repo start auto kernel/samsung/victory
 cdv kernel/samsung/victory
 echo "### Ignore IOCTL_MFC_BUF_CACHE requests, fixes decoded video artifacts. http://review.cyanogenmod.com/#change,13149"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/49/13149/4 && git cherry-pick FETCH_HEAD
+echo "### Test PVR 10MB Free by noobnl ###"
+apply_patch $BASEDIR/epictools/patches/pvr-free-10mb.patch
+git add Kernel/arch/arm/mach-s5pv210/mach-victory.c
+git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 
 repo start auto build

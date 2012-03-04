@@ -68,6 +68,8 @@ cdb
 
 repo start auto packages/providers/MediaProvider
 cdv packages/providers/MediaProvider
+echo "### Check external storage volume ID to ensure media is actually mounted. http://review.cyanogenmod.com/13251"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_providers_MediaProvider refs/changes/51/13251/1 && git cherry-pick FETCH_HEAD
 echo "### Debug disappearing sdcard ringtones"
 apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug.diff
 apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff

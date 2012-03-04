@@ -78,6 +78,7 @@ apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_Media
 apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff
 git add src/com/android/providers/media/MediaScannerService.java
 git add src/com/android/providers/media/MediaProvider.java
+rm -f src/com/android/providers/media/MediaProvider.java.orig
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 

@@ -45,7 +45,7 @@ curl -L -o ./prebuilt/common/bootanimation.zip -O -L http://togami.com/~warren/t
 git add prebuilt/common/bootanimation.zip
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 echo "### Modular backuptool.sh. Executes backup and restore methods defined in arbitrary /system/addon.d/*.sh scripts. http://review.cyanogenmod.com/#change,13267"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_vendor_cm refs/changes/67/13267/2 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_vendor_cm refs/changes/67/13267/3 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto device/samsung/epicmtd

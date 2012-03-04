@@ -48,9 +48,10 @@ cdb
 
 repo start auto device/samsung/epicmtd
 cdv device/samsung/epicmtd
-echo ### removes cflag defines ###
+echo "### removes cflag defines ### http://review.cyanogenmod.com/#change,13035"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/35/13035/6 && git cherry-pick FETCH_HEAD
 cdb
+
 repo start auto frameworks/base 
 cdv frameworks/base
 echo "### SamsungRIL: Fixes for CDMA data reconnection failures due to stale pppd. http://review.cyanogenmod.com/13230"

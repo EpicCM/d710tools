@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apply_patch() {
+http_patch() {
   PATCHNAME=$(basename $1)
   curl -L -o $PATCHNAME -O -L $1
   cat $PATCHNAME |patch -p1
@@ -59,12 +59,12 @@ cdv frameworks/base
 echo "### SamsungRIL: Fixes for CDMA data reconnection failures due to stale pppd. http://review.cyanogenmod.com/13230"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_frameworks_base refs/changes/30/13230/1 && git cherry-pick FETCH_HEAD
 echo "### Debug disappearing sdcard ringtones"
-apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/frameworks_base_debug.diff
+http_patch http://www.club.cc.cmu.edu/~mkasick/patches/frameworks_base_debug.diff
 git add media/java/android/media/MediaScanner.java
 git add media/libmedia/MediaScanner.cpp
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 echo "### Test Patch: CDMA 1 signal bar threshold s/100/105/ to match Samsung"
-apply_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm-v2.patch
+http_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm-v2.patch
 git add telephony/java/android/telephony/SignalStrength.java
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
@@ -76,8 +76,8 @@ git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_providers
 echo "### Fix deletion of least-recently-used external databases. http://review.cyanogenmod.com/13280"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_providers_MediaProvider refs/changes/80/13280/1 && git cherry-pick FETCH_HEAD
 echo "### Debug disappearing sdcard ringtones"
-apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug.diff
-apply_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff
+http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug.diff
+http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff
 git add src/com/android/providers/media/MediaScannerService.java
 git add src/com/android/providers/media/MediaProvider.java
 rm -f src/com/android/providers/media/MediaProvider.java.orig
@@ -89,7 +89,7 @@ cdv kernel/samsung/victory
 echo "### Ignore IOCTL_MFC_BUF_CACHE requests, fixes decoded video artifacts. http://review.cyanogenmod.com/#change,13149"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/49/13149/4 && git cherry-pick FETCH_HEAD
 echo "### Test PVR 10MB Free by noobnl ###"
-apply_patch $BASEDIR/epictools/patches/pvr-free-10mb.patch
+cat $BASEDIR/epictools/patches/pvr-free-10mb.patch |patch -p1
 git add Kernel/arch/arm/mach-s5pv210/mach-victory.c
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb

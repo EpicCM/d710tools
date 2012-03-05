@@ -94,6 +94,8 @@ echo "### DockAudio: Add support for audio redirection to samsung docks with the
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/88/13288/1 && git cherry-pick FETCH_HEAD
 echo "### epicmtd: change MFC driver to Crespo and enable Samsung MFC caching. http://review.cyanogenmod.com/#change,13286"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/86/13286/1 && git cherry-pick FETCH_HEAD
+echo "### Compress epicmtd kernel with xz, saves ~1MB storage. Refactored code from crespo kernel-3.0.23. http://review.cyanogenmod.com/#change,13295"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/95/13295/2 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto build

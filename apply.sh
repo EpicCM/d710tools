@@ -52,6 +52,8 @@ repo start auto device/samsung/epicmtd
 cdv device/samsung/epicmtd
 echo "### removes cflag defines ### http://review.cyanogenmod.com/#change,13035"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/35/13035/6 && git cherry-pick FETCH_HEAD
+echo "### epicmtd: use ics mfc driver for caching (improves performance of encoder and decoder) part: 2/2 http://review.cyanogenmod.com/#change,13287"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/87/13287/2 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto frameworks/base 
@@ -92,6 +94,8 @@ echo "### epicmtd: free unused mmap memory from older samsung powervr driver for
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/84/13284/1 && git cherry-pick FETCH_HEAD
 echo "### DockAudio: Add support for audio redirection to samsung docks with the help of the "Galaxy Dock Sound Redirector" market app. http://review.cyanogenmod.com/#change,13288"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/88/13288/1 && git cherry-pick FETCH_HEAD
+echo "### epicmtd: change MFC driver to Crespo and enable Samsung MFC caching. http://review.cyanogenmod.com/#change,13286"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/86/13286/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto build

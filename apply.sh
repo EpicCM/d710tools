@@ -74,7 +74,7 @@ cdv packages/providers/MediaProvider
 echo "### Check external storage volume ID to ensure media is actually mounted. http://review.cyanogenmod.com/13251"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_providers_MediaProvider refs/changes/51/13251/1 && git cherry-pick FETCH_HEAD
 echo "### Fix deletion of least-recently-used external databases. http://review.cyanogenmod.com/13280"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_providers_MediaProvider refs/changes/80/13280/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_providers_MediaProvider refs/changes/80/13280/2 && git cherry-pick FETCH_HEAD
 echo "### Debug disappearing sdcard ringtones"
 http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug.diff
 http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff

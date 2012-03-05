@@ -88,10 +88,8 @@ repo start auto kernel/samsung/victory
 cdv kernel/samsung/victory
 echo "### Ignore IOCTL_MFC_BUF_CACHE requests, fixes decoded video artifacts. http://review.cyanogenmod.com/#change,13149"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/49/13149/4 && git cherry-pick FETCH_HEAD
-echo "### Test PVR 10MB Free by noobnl ###"
-cat $BASEDIR/epictools/patches/pvr-free-13mb.patch |patch -p1
-git add Kernel/arch/arm/mach-s5pv210/mach-victory.c
-git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
+echo "### epicmtd: free unused mmap memory from older samsung powervr driver for gingerbread. result: 13 mb free http://review.cyanogenmod.com/#change,13284"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/84/13284/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto build

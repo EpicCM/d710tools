@@ -100,6 +100,8 @@ echo "### epicmtd: decrease mmap usage to provide more ram to userspace. http://
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/18/13318/4 && git cherry-pick FETCH_HEAD
 echo "### Free more RAM by disabling FIMC1 mmap and reduce mmap usage for JPEG driver. 1.9 MB is freed. http://review.cyanogenmod.com/#change,13369"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/69/13369/2 && git cherry-pick FETCH_HEAD
+echo "### Epicmtd: add missing encyrpting support to kernel for device encyrption http://review.cyanogenmod.com/#change,13374"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/74/13374/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto build

@@ -50,21 +50,17 @@ cdb
 
 repo start auto device/samsung/epicmtd
 cdv device/samsung/epicmtd
-echo "### epicmtd: use ics mfc driver for caching (improves performance of encoder and decoder) part: 2/2 http://review.cyanogenmod.com/#change,13287"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/87/13287/2 && git cherry-pick FETCH_HEAD
-echo "### epicmtd: omx: mfc mmap buffer changes http://review.cyanogenmod.com/#change,13319"
+echo "### epicmtd: omx: mfc mmap buffer reduction to 22MB (included in beta0) http://review.cyanogenmod.com/#change,13319"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/19/13319/2 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto frameworks/base 
 cdv frameworks/base
-echo "### SamsungRIL: Fixes for CDMA data reconnection failures due to stale pppd. http://review.cyanogenmod.com/13230"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_frameworks_base refs/changes/30/13230/1 && git cherry-pick FETCH_HEAD
-echo "### Debug disappearing sdcard ringtones"
-http_patch http://www.club.cc.cmu.edu/~mkasick/patches/frameworks_base_debug.diff
-git add media/java/android/media/MediaScanner.java
-git add media/libmedia/MediaScanner.cpp
-git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
+#echo "### Debug disappearing sdcard ringtones"
+#http_patch http://www.club.cc.cmu.edu/~mkasick/patches/frameworks_base_debug.diff
+#git add media/java/android/media/MediaScanner.java
+#git add media/libmedia/MediaScanner.cpp
+#git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 echo "### Test Patch: CDMA 1 signal bar threshold s/100/105/ to match Samsung"
 http_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm-v2.patch
 git add telephony/java/android/telephony/SignalStrength.java
@@ -77,26 +73,18 @@ echo "### Check external storage volume ID to ensure media is actually mounted. 
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_providers_MediaProvider refs/changes/51/13251/1 && git cherry-pick FETCH_HEAD
 echo "### Fix deletion of least-recently-used external databases. http://review.cyanogenmod.com/13280"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_providers_MediaProvider refs/changes/80/13280/2 && git cherry-pick FETCH_HEAD
-echo "### Debug disappearing sdcard ringtones"
-http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug.diff
-http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff
-git add src/com/android/providers/media/MediaScannerService.java
-git add src/com/android/providers/media/MediaProvider.java
-rm -f src/com/android/providers/media/MediaProvider.java.orig
-git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
+#echo "### Debug disappearing sdcard ringtones"
+#http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug.diff
+#http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff
+#git add src/com/android/providers/media/MediaScannerService.java
+#git add src/com/android/providers/media/MediaProvider.java
+#rm -f src/com/android/providers/media/MediaProvider.java.orig
+#git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 
 repo start auto kernel/samsung/victory
 cdv kernel/samsung/victory
-echo "### epicmtd: free unused mmap memory from older samsung powervr driver for gingerbread. result: 13 mb free http://review.cyanogenmod.com/#change,13284"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/84/13284/1 && git cherry-pick FETCH_HEAD
-echo "### DockAudio: Add support for audio redirection to samsung docks with the help of the "Galaxy Dock Sound Redirector" market app. http://review.cyanogenmod.com/#change,13288"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/88/13288/1 && git cherry-pick FETCH_HEAD
-echo "### epicmtd: change MFC driver to Crespo and enable Samsung MFC caching. http://review.cyanogenmod.com/#change,13286"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/86/13286/1 && git cherry-pick FETCH_HEAD
-echo "### Compress epicmtd kernel with xz, saves ~1MB storage. Refactored code from crespo kernel-3.0.23. http://review.cyanogenmod.com/#change,13295"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/95/13295/4 && git cherry-pick FETCH_HEAD
-echo "### epicmtd: decrease mmap usage to provide more ram to userspace. http://review.cyanogenmod.com/#change,13318"
+echo "### epicmtd: decrease mmap usage to provide more ram to userspace. (included in beta0) http://review.cyanogenmod.com/#change,13318"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/18/13318/4 && git cherry-pick FETCH_HEAD
 echo "### Free more RAM by disabling FIMC1 mmap and reduce mmap usage for JPEG driver. 1.9 MB is freed. http://review.cyanogenmod.com/#change,13369"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/69/13369/2 && git cherry-pick FETCH_HEAD

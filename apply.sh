@@ -43,7 +43,7 @@ cdv vendor/cm/
 echo "### Patching Boot Animation ###"
 curl -L -o ./prebuilt/common/bootanimation.zip -O -L http://togami.com/~warren/temp/bootani-cm9-ver1-looponly-halfframe-16fps.zip
 git add prebuilt/common/bootanimation.zip
-git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
+git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - Boot Animation"
 cdb
 
 repo start auto device/samsung/epicmtd
@@ -62,7 +62,11 @@ cdv frameworks/base
 echo "### Test Patch: CDMA 1 signal bar threshold s/100/105/ to match Samsung"
 http_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm-v2.patch
 git add telephony/java/android/telephony/SignalStrength.java
-git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
+git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - CDMA signal bar"
+echo "### Test Patch: VM"
+http_patch http://asgard.ancl.hawaii.edu/~warren/vm-temp.patch
+git add telephony/java/com/android/internal/telephony/cdma/CdmaSMSDispatcher.java
+git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - VM"
 cdb
 
 #repo start auto packages/providers/MediaProvider

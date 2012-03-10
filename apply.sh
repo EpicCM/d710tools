@@ -56,6 +56,13 @@ echo "### epicmtd: Updated Sprint APN in vendor/cm so remove from epicmtd http:/
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/35/13435/1 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto development
+cdv development
+echo "### Update APN's for Sprint and Virgin Mobile. http://review.cyanogenmod.com/#change,13436"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_development refs/changes/36/13436/1 && git cherry-pick FETCH_HEAD
+cdb
+
+
 repo start auto frameworks/base 
 cdv frameworks/base
 #echo "### Debug disappearing sdcard ringtones"

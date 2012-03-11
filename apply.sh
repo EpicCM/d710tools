@@ -68,9 +68,7 @@ http_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm-v2.p
 git add telephony/java/android/telephony/SignalStrength.java
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - CDMA signal bar"
 echo "### Test Patch: VM"
-http_patch http://asgard.ancl.hawaii.edu/~warren/vm-temp.patch
-git add telephony/java/com/android/internal/telephony/cdma/CdmaSMSDispatcher.java
-git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - VM"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_frameworks_base refs/changes/01/13501/1 && git cherry-pick FETCH_HEAD
 cdb
 
 #repo start auto packages/providers/MediaProvider

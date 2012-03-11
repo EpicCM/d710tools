@@ -44,24 +44,17 @@ echo "### Patching Boot Animation ###"
 curl -L -o ./prebuilt/common/bootanimation.zip -O -L http://togami.com/~warren/temp/bootani-cm9-ver1-looponly-halfframe-16fps.zip
 git add prebuilt/common/bootanimation.zip
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - Boot Animation"
-echo "### Update APN's for Sprint and Virgin Mobile. http://review.cyanogenmod.com/#change,13434"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_vendor_cm refs/changes/34/13434/1 && git cherry-pick FETCH_HEAD
+echo "### CDMA specific apns-conf.xml. http://review.cyanogenmod.com/#change,13434"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_vendor_cm refs/changes/34/13434/3 && git checkout FETCH_HEAD
 cdb
 
 repo start auto device/samsung/epicmtd
 cdv device/samsung/epicmtd
 echo "### epicmtd: omx: mfc mmap buffer reduction to 22MB (included in beta0) http://review.cyanogenmod.com/#change,13319"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/19/13319/2 && git cherry-pick FETCH_HEAD
-echo "### epicmtd: Updated Sprint APN in vendor/cm so remove from epicmtd http://review.cyanogenmod.com/#change,13435"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/35/13435/1 && git cherry-pick FETCH_HEAD
+echo "### epicmtd:  epicmtd: Use CDMA apns-conf.xml http://review.cyanogenmod.com/#change,13500"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/00/13500/1 && git cherry-pick FETCH_HEAD
 cdb
-
-repo start auto development
-cdv development
-echo "### Update APN's for Sprint and Virgin Mobile. http://review.cyanogenmod.com/#change,13436"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_development refs/changes/36/13436/1 && git cherry-pick FETCH_HEAD
-cdb
-
 
 repo start auto frameworks/base 
 cdv frameworks/base

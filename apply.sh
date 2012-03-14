@@ -44,8 +44,6 @@ echo "### Patching Boot Animation ###"
 curl -L -o ./prebuilt/common/bootanimation.zip -O -L http://togami.com/~warren/temp/bootani-cm9-ver1-looponly-halfframe-16fps.zip
 git add prebuilt/common/bootanimation.zip
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - Boot Animation"
-echo "### CDMA specific apns-conf.xml. http://review.cyanogenmod.com/#change,13434"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_vendor_cm refs/changes/34/13434/3 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto device/samsung/epicmtd

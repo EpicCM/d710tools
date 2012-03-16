@@ -41,9 +41,10 @@ repo abandon auto
 repo start auto vendor/cm/
 cdv vendor/cm/
 echo "### Patching Boot Animation ###"
-curl -L -o ./prebuilt/common/bootanimation.zip -O -L http://togami.com/~warren/temp/bootani-cm9-ver1-looponly-halfframe-16fps.zip
-git add prebuilt/common/bootanimation.zip
-git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - Boot Animation"
+#curl -L -o ./prebuilt/common/bootanimation.zip -O -L http://togami.com/~warren/temp/bootani-cm9-ver1-looponly-halfframe-16fps.zip
+#git add prebuilt/common/bootanimation.zip
+#git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch - Boot Animation"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_vendor_cm refs/changes/79/13579/3 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto device/samsung/epicmtd

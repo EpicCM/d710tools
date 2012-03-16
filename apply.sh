@@ -69,8 +69,8 @@ cdb
 
 repo start auto packages/apps/Mms
 cdv packages/apps/Mms
-echo "### Mms: Remove SMS Split option and reset user preference to default http://review.cyanogenmod.com/#change,13504" 
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_apps_Mms refs/changes/04/13504/1 && git cherry-pick FETCH_HEAD
+echo "### Mms: remove sms split preference and replace with xml config option http://review.cyanogenmod.com/#change,13504"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_apps_Mms refs/changes/04/13504/3 && git cherry-pick FETCH_HEAD
 cdb
 
 #repo start auto packages/providers/MediaProvider

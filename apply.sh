@@ -62,6 +62,7 @@ cdv frameworks/base
 echo "### Test Patch: CDMA 1 signal bar threshold s/100/105/ to match Samsung"
 http_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm-v2.patch
 git add telephony/java/android/telephony/SignalStrength.java
+git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 
 #repo start auto packages/apps/Mms

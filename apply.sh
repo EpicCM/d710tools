@@ -88,7 +88,7 @@ git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_vic
 echo "### Epicmtd: add missing encyrpting support to kernel for device encyrption http://review.cyanogenmod.com/#change,13374"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/74/13374/1 && git cherry-pick FETCH_HEAD
 echo "### epicmtd: disable mdnie and disable useless devices that don't exist for this SOC. http://review.cyanogenmod.com/#change,13433"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/33/13433/3 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/33/13433/4 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto packages/apps/Phone

@@ -46,46 +46,20 @@ cdb
 
 repo start auto device/samsung/epicmtd
 cdv device/samsung/epicmtd
-echo "### epicmtd: omx: mfc mmap buffer reduction to 22MB (included in beta0) http://review.cyanogenmod.com/#change,13319"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/19/13319/2 && git cherry-pick FETCH_HEAD
 echo "### epicmtd: enable enable_vmnotif_option http://review.cyanogenmod.com/#change,13739"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/39/13739/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto frameworks/base 
 cdv frameworks/base
-#echo "### Debug disappearing sdcard ringtones"
-#http_patch http://www.club.cc.cmu.edu/~mkasick/patches/frameworks_base_debug.diff
-#git add media/java/android/media/MediaScanner.java
-#git add media/libmedia/MediaScanner.cpp
-#git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 echo "### Test Patch: CDMA 1 signal bar threshold s/100/105/ to match Samsung"
 http_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm-v2.patch
 git add telephony/java/android/telephony/SignalStrength.java
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 
-#repo start auto packages/apps/Mms
-#cdv packages/apps/Mms
-#echo "### Mms: remove sms split preference and replace with xml config option http://review.cyanogenmod.com/#change,13504"
-#git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_apps_Mms refs/changes/04/13504/3 && git cherry-pick FETCH_HEAD
-#cdb
-
-#repo start auto packages/providers/MediaProvider
-#cdv packages/providers/MediaProvider
-#echo "### Debug disappearing sdcard ringtones"
-#http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug.diff
-#http_patch http://www.club.cc.cmu.edu/~mkasick/patches/packages_providers_MediaProvider_debug3.diff
-#git add src/com/android/providers/media/MediaScannerService.java
-#git add src/com/android/providers/media/MediaProvider.java
-#rm -f src/com/android/providers/media/MediaProvider.java.orig
-#git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
-#cdb
-
 repo start auto kernel/samsung/victory
 cdv kernel/samsung/victory
-echo "### epicmtd: decrease mmap usage to provide more ram to userspace. (included in beta0) http://review.cyanogenmod.com/#change,13318"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/18/13318/4 && git cherry-pick FETCH_HEAD
 echo "### Free more RAM by disabling FIMC1 mmap and reduce mmap usage for JPEG driver. 1.9 MB is freed. http://review.cyanogenmod.com/#change,13369"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/69/13369/2 && git cherry-pick FETCH_HEAD
 echo "### Epicmtd: add missing encyrpting support to kernel for device encyrption http://review.cyanogenmod.com/#change,13374"

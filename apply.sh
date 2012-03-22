@@ -62,8 +62,6 @@ repo start auto device/samsung/epicmtd
 cdv device/samsung/epicmtd
 echo "### epicmtd: enable enable_vmnotif_option http://review.cyanogenmod.com/#change,13739"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/39/13739/1 && git cherry-pick FETCH_HEAD
-echo "### epicmtd: epicmtd: CM9 beta1 kernel (excluding disable mdnie) http://review.cyanogenmod.com/#change,13842"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_device_samsung_epicmtd refs/changes/42/13842/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto frameworks/base 

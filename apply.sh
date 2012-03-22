@@ -1,5 +1,17 @@
 #!/bin/bash
 
+unset SUCCESS
+on_exit() {
+  if [ -z "$SUCCESS" ]; then
+    echo "ERROR: $0 failed.  Please fix the above error."
+    exit 1
+  else
+    echo "SUCCESS: $0 has completed."
+    exit 0
+  fi
+}
+trap on_exit EXIT
+
 http_patch() {
   PATCHNAME=$(basename $1)
   curl -L -o $PATCHNAME -O -L $1
@@ -34,6 +46,7 @@ fi
 BASEDIR=$(pwd)
 
 # Abandon auto topic branch
+set -e
 repo abandon auto
 
 ################ Apply Patches Below ####################
@@ -71,3 +84,7 @@ cdv packages/apps/Phone
 echo "### Phone: add voicemail notification setting http://review.cyanogenmod.com/#change,13706"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_apps_Phone refs/changes/06/13706/6 && git cherry-pick FETCH_HEAD
 cdb
+
+##### SUCCESS ####
+SUCCESS=true
+exit 0

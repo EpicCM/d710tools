@@ -58,15 +58,11 @@ git add telephony/java/android/telephony/SignalStrength.java
 git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
 cdb
 
-repo start auto kernel/samsung/victory
-cdv kernel/samsung/victory
-echo "### Free more RAM by disabling FIMC1 mmap and reduce mmap usage for JPEG driver. 1.9 MB is freed. http://review.cyanogenmod.com/#change,13369"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/69/13369/2 && git cherry-pick FETCH_HEAD
-echo "### Epicmtd: add missing encyrpting support to kernel for device encyrption http://review.cyanogenmod.com/#change,13374"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/74/13374/1 && git cherry-pick FETCH_HEAD
-echo "### epicmtd: disable mdnie and disable useless devices that don't exist for this SOC. http://review.cyanogenmod.com/#change,13433"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/33/13433/4 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto kernel/samsung/victory
+#cdv kernel/samsung/victory
+#echo "### Epicmtd: add missing encyrpting support to kernel for device encyrption http://review.cyanogenmod.com/#change,13374"
+#git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/74/13374/1 && git cherry-pick FETCH_HEAD
+#cdb
 
 repo start auto packages/apps/Phone
 cdv packages/apps/Phone

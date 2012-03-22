@@ -39,6 +39,7 @@ if [ -d ../.repo ]; then
 fi
 if [ ! -d .repo ]; then
   echo "ERROR: Must run this script from the base of the repo."
+  SUCCESS=true
   exit 255
 fi
 
@@ -46,8 +47,8 @@ fi
 BASEDIR=$(pwd)
 
 # Abandon auto topic branch
-set -e
 repo abandon auto
+set -e
 
 ################ Apply Patches Below ####################
 

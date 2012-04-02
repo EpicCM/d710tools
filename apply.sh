@@ -70,6 +70,8 @@ repo start auto kernel/samsung/victory
 cdv kernel/samsung/victory
 echo "### epicmtd: Enable tun built into zImage, useful for VPN users. http://review.cyanogenmod.com/#change,14327"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/27/14327/1 && git cherry-pick FETCH_HEAD
+echo "### Epicmtd: reduce framebuffer NR size to 2 and frees 7mb to userspace http://review.cyanogenmod.com/#change,14386"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/86/14386/1 && git checkout FETCH_HEAD
 cdb
 
 repo start auto packages/apps/Phone

@@ -60,18 +60,20 @@ cdb
 
 repo start auto frameworks/base 
 cdv frameworks/base
-echo "### Test Patch: CDMA 1 signal bar threshold s/100/105/ to match Samsung"
+echo "### Patch: CDMA 1 signal bar threshold s/100/105/ to match Samsung"
 http_patch http://asgard.ancl.hawaii.edu/~warren/testonly-cdma-1bar-105-dBm-v3.patch
 git add telephony/java/android/telephony/SignalStrength.java
-git commit -m "DO NOT COMMIT TO GERRIT - Temporary Patch"
+git commit -m "DO NOT COMMIT TO GERRIT - need to make into config.xml option for upstream"
 cdb
 
 repo start auto kernel/samsung/victory
 cdv kernel/samsung/victory
-echo "### epicmtd: Enable tun built into zImage, useful for VPN users. http://review.cyanogenmod.com/#change,14327"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/27/14327/1 && git cherry-pick FETCH_HEAD
-echo "### Epicmtd: reduce framebuffer NR size to 2 and frees 7mb to userspace http://review.cyanogenmod.com/#change,14386"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/86/14386/1 && git cherry-pick FETCH_HEAD
+#echo "### Epicmtd: reduce framebuffer NR size to 2 and frees 7mb to userspace http://review.cyanogenmod.com/#change,14386"
+#git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/86/14386/1 && git cherry-pick FETCH_HEAD
+echo "### Test with CONFIG_FB_S3C_NR_BUFFERS=6 since =2 was rejected (read above gerrit)"
+http_patch test-CONFIG_FB_S3C_NR_BUFFERS-6.patch
+git add Kernel/arch/arm/configs/cyanogenmod_epicmtd_defconfig
+git commit -m "DO NOT COMMIT TO GERRIT - test CONFIG_FB_S3C_NR_BUFFERS=6"
 cdb
 
 repo start auto packages/apps/Phone

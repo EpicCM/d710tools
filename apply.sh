@@ -82,6 +82,8 @@ echo "### Test with CONFIG_FB_S3C_NR_BUFFERS=6 since =2 was rejected (read above
 http_patch http://asgard.ancl.hawaii.edu/~warren/test-CONFIG_FB_S3C_NR_BUFFERS-6.patch
 git add Kernel/arch/arm/configs/cyanogenmod_epicmtd_defconfig
 git commit -m "DO NOT COMMIT TO GERRIT - test CONFIG_FB_S3C_NR_BUFFERS=6"
+echo "### Adjust external-speaker playback-gain levels to match EL30. http://review.cyanogenmod.com/#change,14593"
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_kernel_samsung_victory refs/changes/93/14593/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto packages/apps/Phone

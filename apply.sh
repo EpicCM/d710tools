@@ -66,7 +66,6 @@ git add telephony/java/android/telephony/SignalStrength.java
 git commit -m "DO NOT COMMIT TO GERRIT - need to make into config.xml option for upstream"
 echo "### Test gcc http://review.cyanogenmod.com/#change,14549"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_frameworks_base refs/changes/49/14549/1 && git cherry-pick FETCH_HEAD
-cdb
 echo "### Sensor: Add RotationVectorSensor2 http://review.cyanogenmod.com/#change,14609"
 git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_frameworks_base refs/changes/09/14609/1 && git cherry-pick FETCH_HEAD
 cdb

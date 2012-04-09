@@ -11,9 +11,8 @@ Modify your `.repo/local_manifest.xml` as follows:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
-    <project name="EpicCM/epictools.git" path="epictools" remote="github" revision="ics" />
-    <project name="CyanogenMod/android_kernel_samsung_victory" path="kernel/samsung/victory" remote="github" revision="ics" />
-    <project name="CyanogenMod/android_device_samsung_epicmtd" path="device/samsung/epicmtd" remote="github" />
+    <project name="darchstar/e4gttools.git" path="e4gttools" remote="github" revision="ics" />
+    <project name="darchstar/android_device_samsung_epic4gtouch" path="device/samsung/epic4gtouch" remote="github" />
   </manifest>
 ```
 
@@ -34,6 +33,6 @@ Build
 =====
 ```
 . build/envsetup.sh
-breakfast cm_epicmtd-userdebug
+breakfast cm_epic4gtouch-userdebug
 make -j4 bacon
 ```

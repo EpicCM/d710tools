@@ -58,27 +58,10 @@ git reset --hard
 http_patch http://darchstar.shabbypenguin.com/CM9/patch/vmnotif.patch
 cdb
 
-repo start auto frameworks/base
-cdv frameworks/base
-echo "### Test gcc http://review.cyanogenmod.com/#change,14549"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_frameworks_base refs/changes/49/14549/1 && git cherry-pick FETCH_HEAD
-echo "### Dock audio settings Part 1 http://review.cyanogenmod.com/#change,14046"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_frameworks_base refs/changes/46/14046/4 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto packages/apps/Settings
 cdv packages/apps/Settings
-echo "### Dock audio settings Part 2 http://review.cyanogenmod.com/#change,14262"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_apps_Settings refs/changes/62/14262/6 && git cherry-pick FETCH_HEAD
-echo "### patch for cpufreq to point to our freq table"
 git reset --hard
 http_patch http://darchstar.shabbypenguin.com/CM9/patch/cpufreq.patch
-cdb
-
-repo start auto external/srec
-cdv external/srec
-echo "### Test gcc http://review.cyanogenmod.com/#change,14548"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_external_srec refs/changes/48/14548/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto packages/apps/Phone

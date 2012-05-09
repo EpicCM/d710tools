@@ -59,9 +59,18 @@ http_patch http://darchstar.shabbypenguin.com/CM9/patch/vmnotif.patch
 cdb
 
 repo start auto packages/apps/Settings
+echo "### apply cpufreq patch so processor settings reads our cpufreq table properly... i should commit this to gerrit sometime soon"
 cdv packages/apps/Settings
 git reset --hard
 http_patch http://darchstar.shabbypenguin.com/CM9/patch/cpufreq.patch
+cdb
+
+repo start auto frameworks/base
+cdv frameworks/base
+echo "### telephony: CDMA signal bar threshold s/100/105/ to match Samsung's behavior (DO NOT COMMIT) http://review.cyanogenmod.com/#/c/15580/"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/80/15580/4 && git cherry-pick FETCH_HEAD
+echo "### Additional fixes for button/keyboard backlight auto-brightness. http://review.cyanogenmod.com/15726"
+git fetch http://r.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/26/15726/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto packages/apps/Phone

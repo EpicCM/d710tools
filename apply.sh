@@ -69,12 +69,14 @@ repo start auto frameworks/base
 cdv frameworks/base
 echo "### telephony: CDMA signal bar threshold s/100/105/ to match Samsung's behavior (DO NOT COMMIT) http://review.cyanogenmod.com/#/c/15580/"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/80/15580/5 && git cherry-pick FETCH_HEAD
+echo "### Phone: Sprint MWI Quirk: Phantom message wait indicator workaround (2/2) http://review.cyanogenmod.com/#/c/16983/"
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/83/16983/3 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto packages/apps/Phone
 cdv packages/apps/Phone
 echo "### Phone: add voicemail notification setting http://review.cyanogenmod.com/#change,13706"
-git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_apps_Phone refs/changes/06/13706/7 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/p/CyanogenMod/android_packages_apps_Phone refs/changes/06/13706/9 && git cherry-pick FETCH_HEAD
 cdb
 
 

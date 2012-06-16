@@ -67,6 +67,12 @@ cdb
 #git commit -m "Override SamsungRIL's responseSignalStrength method to suit Epic's absurd radio firmware."
 #cdb
 
+repo start auto  libcore
+cdv libcore
+echo "### Revert Linaro change that broke some apps http://r.cyanogenmod.com/#/c/17773/"
+git fetch http://r.cyanogenmod.com/CyanogenMod/android_libcore refs/changes/73/17773/2 && git cherry-pick FETCH_HEAD
+cdb
+
 repo start auto  packages/apps/Mms
 cdv packages/apps/Mms
 echo "### Revert "Problems sending/receiving MMS, tears down MMS APN" http://review.cyanogenmod.com/#/c/17822/"

@@ -12,7 +12,7 @@ Modify your `.repo/local_manifest.xml` as follows:
 <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
     <project name="noobnl/e4gttools.git" path="e4gttools" remote="github" revision="ics" />
-    <project name="epiccm/android_device_samsung_epic4gtouch" path="device/samsung/epic4gtouch" remote="github" />
+    <project name="EpicCM/android_device_samsung_epic4gtouch" path="device/samsung/epic4gtouch" remote="github" />
   </manifest>
 ```
 

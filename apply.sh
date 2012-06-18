@@ -67,12 +67,6 @@ cdb
 #git commit -m "Override SamsungRIL's responseSignalStrength method to suit Epic's absurd radio firmware."
 #cdb
 
-repo start auto  packages/apps/Mms
-cdv packages/apps/Mms
-echo "### Revert "Problems sending/receiving MMS, tears down MMS APN" http://review.cyanogenmod.com/#/c/17822/"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Mms refs/changes/22/17822/1 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto  bootable/recovery
 cdv bootable/recovery
 echo "### Add support for using an update-binary that is included in recovery http://review.cyanogenmod.com/#/c/17576/"

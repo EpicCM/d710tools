@@ -73,8 +73,8 @@ echo "### Add support for using an update-binary that is included in recovery ht
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_bootable_recovery refs/changes/76/17576/1 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto  framework/base
-cdv framework/base
+repo start auto  frameworks/base
+cdv frameworks/base
 echo "fix audio bug"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/16/18616/4 && git cherry-pick FETCH_HEAD
 cdb

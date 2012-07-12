@@ -59,6 +59,18 @@ git reset --hard
 http_patch http://darchstar.shabbypenguin.com/CM9/patch/cpufreq.patch
 cdb
 
+repo start auto packages/apps/Settings
+echo "### apply temp fix to lockscreen icons"
+cdv packages/apps/Settings
+http_patch http://www.shabbypenguin.com/ACS/devices/Samsung/Sprint/E4GT/Patches/Lockscreen1.patch
+cdb
+
+repo start auto frameworks/base
+echo "### apply temp fix to lockscreen icons"
+cdv frameworks/base
+http_patch http://www.shabbypenguin.com/ACS/devices/Samsung/Sprint/E4GT/Patches/Lockscreen2.patch
+cdb
+
 #repo start auto device/samsung/epic4gtouch
 #cdv device/samsung/epic4gtouch
 #echo "### Override SamsungRIL's responseSignalStrength method to suit Epic's absurd radio firmware."
@@ -71,18 +83,6 @@ repo start auto  bootable/recovery
 cdv bootable/recovery
 echo "### Add support for using an update-binary that is included in recovery http://review.cyanogenmod.com/#/c/17576/"
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_bootable_recovery refs/changes/76/17576/1 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto  frameworks/base
-cdv frameworks/base
-echo "fix audio bug"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/16/18616/4 && git cherry-pick FETCH_HEAD
-cdb
-
-repo start auto device/samsung/epic4gtouch
-cdv device/samsung/epic4gtouch
-echo "add define to use audio fix"
-http_patch http://chris41g.org/patches/deviceaudio.patch
 cdb
 ##### SUCCESS ####
 SUCCESS=true

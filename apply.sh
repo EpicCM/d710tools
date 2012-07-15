@@ -62,12 +62,14 @@ cdb
 repo start auto packages/apps/Settings
 echo "### apply temp fix to lockscreen icons"
 cdv packages/apps/Settings
+git reset --hard
 http_patch http://www.shabbypenguin.com/ACS/devices/Samsung/Sprint/E4GT/Patches/Lockscreen1.patch
 cdb
 
 repo start auto frameworks/base
 echo "### apply temp fix to lockscreen icons"
 cdv frameworks/base
+git reset --hard
 http_patch http://www.shabbypenguin.com/ACS/devices/Samsung/Sprint/E4GT/Patches/Lockscreen2.patch
 cdb
 

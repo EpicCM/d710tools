@@ -54,9 +54,10 @@ set -e
 
 repo start auto packages/apps/Settings
 echo "### apply cpufreq patch so processor settings reads our cpufreq table properly... i should commit this to gerrit sometime soon"
+echo "### updated by nivron
 cdv packages/apps/Settings
 git reset --hard
-http_patch http://darchstar.shabbypenguin.com/CM9/patch/cpufreq.patch
+http_patch http://chris41g.org/patches/processor.patch
 cdb
 
 #repo start auto device/samsung/epic4gtouch

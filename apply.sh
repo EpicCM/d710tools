@@ -60,13 +60,13 @@ git reset --hard
 http_patch http://chris41g.org/patches/processor.patch
 cdb
 
-#repo start auto device/samsung/epic4gtouch
-#cdv device/samsung/epic4gtouch
-#echo "### Override SamsungRIL's responseSignalStrength method to suit Epic's absurd radio firmware."
-#http_patch http://darchstar.shabbypenguin.com/CM9/patch/ril.patch
-#git add . -A
-#git commit -m "Override SamsungRIL's responseSignalStrength method to suit Epic's absurd radio firmware."
-#cdb
+repo start auto build
+echo "### modify CM build script"
+cdv build
+git reset --hard
+http_patch http://chris41g.org/patches/build.patch
+cdb
+
 
 repo start auto  bootable/recovery
 cdv bootable/recovery

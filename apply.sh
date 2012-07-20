@@ -67,12 +67,6 @@ git reset --hard
 http_patch http://chris41g.org/patches/build.patch
 cdb
 
-repo start auto bootable/recovery
-cdv bootable/recovery
-echo "### Add support for using an update-binary that is included in recovery http://review.cyanogenmod.com/#/c/17576/"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_bootable_recovery refs/changes/76/17576/1 && git cherry-pick FETCH_HEAD
-cdb
-
 repo start auto frameworks/base
 echo "### modify CM framework to test ril"
 cdv frameworks/base

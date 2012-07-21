@@ -60,13 +60,6 @@ git reset --hard
 http_patch http://chris41g.org/patches/processor.patch
 cdb
 
-repo start auto build
-echo "### modify CM build script"
-cdv build
-git reset --hard
-http_patch http://chris41g.org/patches/build.patch
-cdb
-
 repo start auto frameworks/base
 echo "### modify CM framework to test ril"
 cdv frameworks/base

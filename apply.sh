@@ -80,12 +80,6 @@ cdb
 #git add . -A
 #git commit -m "Override SamsungRIL's responseSignalStrength method to suit Epic's absurd radio firmware."
 #cdb
-
-repo start auto  bootable/recovery
-cdv bootable/recovery
-echo "### Add support for using an update-binary that is included in recovery http://review.cyanogenmod.com/#/c/17576/"
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_bootable_recovery refs/changes/76/17576/1 && git cherry-pick FETCH_HEAD
-cdb
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

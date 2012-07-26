@@ -73,13 +73,12 @@ git reset --hard
 http_patch http://www.shabbypenguin.com/ACS/devices/Samsung/Sprint/E4GT/Patches/Lockscreen2.patch
 cdb
 
-#repo start auto device/samsung/epic4gtouch
-#cdv device/samsung/epic4gtouch
-#echo "### Override SamsungRIL's responseSignalStrength method to suit Epic's absurd radio firmware."
-#http_patch http://darchstar.shabbypenguin.com/CM9/patch/ril.patch
-#git add . -A
-#git commit -m "Override SamsungRIL's responseSignalStrength method to suit Epic's absurd radio firmware."
-#cdb
+repo start auto frameworks/base
+echo "### modify CM framework to test ril"
+cdv frameworks/base
+git reset --hard
+http_patch http://chris41g.org/patches/RIL.patch
+cdb
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

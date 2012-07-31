@@ -52,19 +52,19 @@ set -e
 
 ################ Apply Patches Below ####################
 
-repo start auto packages/apps/Settings
-echo "### apply cpufreq patch so processor settings reads our cpufreq table properly... i should commit this to gerrit sometime soon"
-echo "### updated by nivron"
-cdv packages/apps/Settings
-git reset --hard
-http_patch http://chris41g.org/patches/processor.patch
-cdb
+#repo start auto packages/apps/Settings
+#echo "### apply cpufreq patch so processor settings reads our cpufreq table properly... i should commit this to gerrit sometime soon"
+#echo "### updated by nivron"
+#cdv packages/apps/Settings
+#git reset --hard
+#http_patch http://chris41g.org/patches/processor.patch
+#cdb
 
 repo start auto frameworks/base
 echo "### modify CM framework to test ril"
 cdv frameworks/base
 git reset --hard
-http_patch http://chris41g.org/patches/RIL.patch
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/76/20276/4 && git cherry-pick FETCH_HEAD
 cdb
 ##### SUCCESS ####
 SUCCESS=true

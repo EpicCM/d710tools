@@ -81,8 +81,7 @@ repo start auto frameworks/base
 echo "### modify CM framework to test ril"
 cdv frameworks/base
 git reset --hard
-http_patch http://chris41g.org/patches/RIL.patch
-cdb
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/76/20276/4 && git cherry-pick FETCH_HEADcdb
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

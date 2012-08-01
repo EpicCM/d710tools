@@ -77,6 +77,13 @@ cdb
 #http_patch http://www.shabbypenguin.com/ACS/devices/Samsung/Sprint/E4GT/Patches/Lockscreen2.patch
 #cdb
 
+repo start auto packages/apps/Phone
+echo ### Applying hakcenter's fix ###
+cdv packages/apps/Phone
+git reset --hard
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Phone refs/changes/52/19252/1 && git checkout FETCH_HEAD
+cdb
+
 repo start auto frameworks/base
 echo "### modify CM framework to test ril"
 cdv frameworks/base

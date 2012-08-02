@@ -60,12 +60,12 @@ set -e
 #http_patch http://chris41g.org/patches/processor.patch
 #cdb
 
-repo start auto frameworks/base
-echo "### modify CM framework to test ril"
-cdv frameworks/base
-git reset --hard
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/76/20276/4 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto frameworks/base
+#echo "### modify CM framework to test ril"
+#cdv frameworks/base
+#git reset --hard
+#git fetch http://review.cyanogenmod.com/CyanogenMod/android_frameworks_base refs/changes/76/20276/4 && git cherry-pick FETCH_HEAD
+#cdb
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

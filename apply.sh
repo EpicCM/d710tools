@@ -64,7 +64,7 @@ repo start auto packages/apps/Phone
 echo "### fix ringtones"
 cdv packages/apps/Phone
 git reset --hard
-git fetch http://review.cyanogenmod.com/CyanogenMod/android_packages_apps_Phone refs/changes/59/21259/1 && git cherry-pick FETCH_HEAD
+http_patch http://chris41g.org/patches/ringer.patch
 cdb
 ##### SUCCESS ####
 SUCCESS=true

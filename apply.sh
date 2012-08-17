@@ -60,6 +60,13 @@ set -e
 #http_patch http://chris41g.org/patches/processor.patch
 #cdb
 
+repo start auto bootable/recovery
+echo "### patch CWM to backup android_secure on internal and external"
+cdv bootable/recovery
+git reset --hard
+http_patch http://chris41g.org/patches/nandroid.patch
+cdb
+
 repo start auto packages/apps/Phone
 echo "### fix ringtones"
 cdv packages/apps/Phone

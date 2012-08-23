@@ -52,13 +52,12 @@ set -e
 
 ################ Apply Patches Below ####################
 
-#repo start auto packages/apps/Settings
-#echo "### apply cpufreq patch so processor settings reads our cpufreq table properly... i should commit this to gerrit sometime soon"
-#echo "### updated by nivron"
-#cdv packages/apps/Settings
-#git reset --hard
-#http_patch http://chris41g.org/patches/processor.patch
-#cdb
+repo start auto build
+echo "### test Fast Build Patch by Turl"
+cdv build
+git reset --hard
+git fetch ssh://chris41g@review.cyanogenmod.com:29418/CyanogenMod/android_build refs/changes/29/21929/1 && git cherry-pick FETCH_HEAD
+cdb
 
 repo start auto bootable/recovery
 echo "### patch CWM to backup android_secure on internal and external"

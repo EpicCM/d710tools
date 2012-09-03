@@ -51,12 +51,11 @@ repo abandon auto
 set -e
 
 ################ Apply Patches Below ####################
-
-repo start auto build
-echo "### test Fast Build Patch by Turl"
-cdv build
+repo start auto vendor/cm
+echo "### patch opticharger to not compress arsc"
+cdv vendor/cm
 git reset --hard
-git fetch ssh://chris41g@review.cyanogenmod.com:29418/CyanogenMod/android_build refs/changes/29/21929/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_vendor_cm refs/changes/94/21794/1 && git format-patch -1 --stdout FETCH_HEAD
 cdb
 
 repo start auto bootable/recovery

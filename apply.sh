@@ -71,6 +71,13 @@ cdv packages/apps/Phone
 git reset --hard
 http_patch http://chris41g.devphone.org/patches/ringer.patch
 cdb
+
+repo start auto packages/apps/Settings
+echo "### storage"
+cdv packages/apps/Settings
+git reset --hard
+http_patch http://chris41g.devphone.org/patches/storage.patch
+cdb
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

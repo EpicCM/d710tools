@@ -26,7 +26,7 @@ Auto Apply Patches
 This script will remove any topic branches named auto, then apply all patches under topic branch auto.
 
 ```
-epictools/apply.sh
+d710tools/apply.sh
 ```
 
 Build

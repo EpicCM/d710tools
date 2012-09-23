@@ -33,6 +33,6 @@ Build
 =====
 ```
 . build/envsetup.sh
-breakfast cm_epic4gtouch-userdebug
+breakfast cm_d710-userdebug
 make -j4 bacon
 ```

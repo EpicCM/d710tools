@@ -72,11 +72,11 @@ git reset --hard
 http_patch http://chris41g.devphone.org/patches/ringer.patch
 cdb
 
-repo start auto packages/apps/Settings
+repo start auto system/core
 echo "### storage"
-cdv packages/apps/Settings
+cdv system/core
 git reset --hard
-http_patch http://chris41g.devphone.org/patches/storage.patch
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_core refs/changes/97/23697/1 && git cherry-pick FETCH_HEAD
 cdb
 ##### SUCCESS ####
 SUCCESS=true

@@ -77,7 +77,7 @@ echo "### storage"
 cdv system/core
 git reset --hard
 git format-patch -k -1 --stdout be5bb1d4aa98e066c44e5ee8a54a9bf92b17aa37| git am -3 -k
-#git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_core refs/changes/97/23697/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.com/CyanogenMod/android_system_core refs/changes/97/23697/1 && git cherry-pick FETCH_HEAD
 cdb
 ##### SUCCESS ####
 SUCCESS=true

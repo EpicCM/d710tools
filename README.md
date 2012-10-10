@@ -1,24 +1,29 @@
 Epic Build Instructions
 =======================
 ```
-mkdir cm9
-cd cm9
-repo init -u git://github.com/CyanogenMod/android.git -b ics
+mkdir cm10
+cd cm10
+repo init -u git://github.com/CyanogenMod/android.git -b jellybean
 ```
 
 Modify your `.repo/local_manifest.xml` as follows:
 
 ```xml
-<?xml version="1.0" encoding="UTF-8"?>
-  <manifest>
-    <project name="EpicCM/d710tools.git" path="d710tools" remote="github" revision="ics" />
-    <project name="EpicCM/android_device_samsung_epic4gtouch" path="device/samsung/epic4gtouch" remote="github" />
-  </manifest>
+?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <project name="EpicCM/d710tools.git" path="d710tools" remote="github" revision="jellybean" />
+  <project name="EpicCM/android_device_samsung_d710" path="device/samsung/d710" remote="github" revision="jellybean" />
+  <project name="CyanogenMod/android_device_samsung_galaxys2-common" path="device/samsung/galaxys2-common" remote="github" revision="jellybean" />
+  <project name="CyanogenMod/android_hardware_samsung" path="hardware/samsung" remote="github" revision="jellybean" />
+  <project name="EpicAOSP/android_kernel_samsung_smdk4210_new" path="kernel/samsung/smdk4210" remote="github" revision="jellybean" />
+  <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="jellybean" />
+  <project name="CyanogenMod/android_packages_apps_SamsungServiceMode" path="packages/apps/SamsungServiceMode" remote="github" revision="jellybean" />
+</manifest>
 ```
 
 ```
 repo sync
-vendor/cm/get-prebuilts
+
 ```
 
 Auto Apply Patches

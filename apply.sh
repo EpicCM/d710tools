@@ -58,13 +58,6 @@ git reset --hard
 git fetch http://review.cyanogenmod.com/CyanogenMod/android_vendor_cm refs/changes/94/21794/1 && git format-patch -1 --stdout FETCH_HEAD
 cdb
 
-repo start auto bootable/recovery
-echo "### patch CWM to backup android_secure on internal and external"
-cdv bootable/recovery
-git reset --hard
-http_patch http://chris41g.devphone.org/patches/nandroid.patch
-cdb
-
 repo start auto packages/apps/Phone
 echo "### fix ringtones"
 cdv packages/apps/Phone
@@ -76,7 +69,6 @@ repo start auto system/core
 echo "### storage"
 cdv system/core
 git reset --hard
-git cherry-pick be5bb1d4aa98e066c44e5ee8a54a9bf92b17aa37
 http_patch http://chris41g.devphone.org/patches/steve.patch
 cdb
 ##### SUCCESS ####

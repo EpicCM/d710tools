@@ -11,8 +11,8 @@ Modify your `.repo/local_manifest.xml` as follows:
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
-    <project name="EpicTouchAOKP/e4gttools.git" path="e4gttools" remote="github" revision="ics" />
-    <project name="EpicTouchAOKP/android_device_samsung_epic4gtouch" path="device/samsung/epic4gtouch" remote="github" />
+    <project name="ProjectPanda/e4gttools.git" path="e4gttools" remote="github" revision="ics" />
+    <project name="ProjectPanda/android_device_samsung_epic4gtouch" path="device/samsung/epic4gtouch" remote="github" />
   </manifest>
 ```
 

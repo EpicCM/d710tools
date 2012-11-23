@@ -57,19 +57,6 @@ cdv packages/apps/Phone
 git reset --hard
 http_patch http://chris41g.devphone.org/patches/ringer.patch
 cdb
-
-repo start auto frameworks/base
-cdv frameworks/base
-git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/51/26051/1 && git format-patch -1 FETCH_HEAD
-cdb
-
-repo start auto system/core
-echo "### storage"
-cdv system/core
-git reset --hard
-http_patch http://chris41g.devphone.org/patches/steve.patch
-cdb
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

@@ -61,7 +61,7 @@ cdb
 repo start auto hardware/samsung
 cdv hardware/samsung
 git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_samsung refs/changes/23/27023/3 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_samsung refs/changes/23/27023/6 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto hardware/libhardware

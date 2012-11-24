@@ -76,6 +76,11 @@ git reset --hard
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/17/27017/2 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto frameworks/base
+cdv frameworks/base
+git reset --hard
+http_patch http://chris41g.devphone.org/patches/debug.patch
+cdb
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

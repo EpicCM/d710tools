@@ -51,18 +51,18 @@ repo abandon auto
 set -e
 
 ################ Apply Patches Below ####################
-repo start auto packages/apps/Phone
-echo "### fix ringtones"
-cdv packages/apps/Phone
+repo start auto frameworks/native
+echo "samsung stuff"
+cdv frameworks/native
 git reset --hard
-http_patch http://chris41g.devphone.org/patches/ringer.patch
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/61/26961/3 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto system/core
-echo "### storage"
-cdv system/core
+repo start auto prebuilt
+echo "fix prebuilt"
+cdv prebuilt
 git reset --hard
-http_patch http://chris41g.devphone.org/patches/steve.patch
+rm -rf android* sdk ndk common windows
 cdb
 ##### SUCCESS ####
 SUCCESS=true

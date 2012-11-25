@@ -79,6 +79,7 @@ cdb
 repo start auto frameworks/base
 cdv frameworks/base
 git reset --hard
+git clean -fd
 http_patch http://chris41g.devphone.org/patches/debug.patch
 http_patch http://chris41g.devphone.org/patches/moar.patch
 cdb

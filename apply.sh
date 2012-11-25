@@ -70,6 +70,7 @@ repo start auto system/core
 echo "### storage"
 cdv system/core
 git reset --hard
+git fetch https://github.com/CyanogenMod/android_system_core refs/heads/jellybean
 git cherry-pick be5bb1d4aa98e066c44e5ee8a54a9bf92b17aa37
 http_patch http://chris41g.devphone.org/patches/steve.patch
 cdb

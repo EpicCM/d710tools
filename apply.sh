@@ -83,6 +83,12 @@ git clean -fd
 http_patch http://chris41g.devphone.org/patches/debug.patch
 http_patch http://chris41g.devphone.org/patches/moar.patch
 cdb
+
+repo start auto device/samsung/galaxys2-common
+cdv device/samsung/galaxys2-common
+git reset --hard
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_galaxys2-common refs/changes/70/27070/2 && git cherry-pick FETCH_HEAD
+cdb
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

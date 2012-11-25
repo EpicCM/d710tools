@@ -1,9 +1,9 @@
 Epic Build Instructions
 =======================
 ```
-mkdir cm10
-cd cm10
-repo init -u git://github.com/CyanogenMod/android.git -b jellybean
+mkdir -p android/CM
+cd android/CM
+repo init -u git://github.com/CyanogenMod/android.git -b mr1-staging
 ```
 
 Modify your `.repo/local_manifest.xml` as follows:
@@ -36,7 +36,5 @@ d710tools/apply.sh
 Build
 =====
 ```
-. build/envsetup.sh
-breakfast d710
-make -j4 bacon
+. build/envsetup.sh && brunch d710
 ```

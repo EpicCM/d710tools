@@ -1,8 +1,8 @@
 Epic Build Instructions
 =======================
 ```
-mkdir cm9
-cd cm9
+mkdir -p android/CM
+cd android/CM
 repo init -u git://github.com/CyanogenMod/android.git -b ics
 ```
 
@@ -12,7 +12,10 @@ Modify your `.repo/local_manifest.xml` as follows:
 <?xml version="1.0" encoding="UTF-8"?>
   <manifest>
     <project name="EpicCM/d710tools.git" path="d710tools" remote="github" revision="ics" />
-    <project name="EpicCM/android_device_samsung_epic4gtouch" path="device/samsung/epic4gtouch" remote="github" />
+    <project name="EpicCM/android_device_samsung_d710" path="device/samsung/d710" remote="github" revision="smdk" />
+    <project name="CyanogenMod/android_hardware_samsung" path="hardware/samsung" remote="github" revision="ics" />
+    <project name="EpicAOSP/android_kernel_samsung_smdk4210_new" path="kernel/samsung/smdk4210" remote="github" revision="ics" />
+    <project name="CyanogenMod/android_packages_apps_SamsungServiceMode" path="packages/apps/SamsungServiceMode" remote="github" revision="ics" />
   </manifest>
 ```
 
@@ -32,7 +35,5 @@ d710tools/apply.sh
 Build
 =====
 ```
-. build/envsetup.sh
-breakfast cm_d710-userdebug
-make -j4 bacon
+. build/envsetup.sh && brunch d710
 ```

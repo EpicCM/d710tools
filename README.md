@@ -36,7 +36,5 @@ d710tools/apply.sh
 Build
 =====
 ```
-. build/envsetup.sh
-breakfast cm_d710-userdebug
-make -j4 bacon
+. build/envsetup.sh && brunch d710
 ```

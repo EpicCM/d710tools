@@ -55,7 +55,7 @@ repo start auto frameworks/native
 echo "samsung stuff"
 cdv frameworks/native
 git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/18/27018/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/18/27018/2 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto hardware/samsung
@@ -73,7 +73,7 @@ cdb
 repo start auto frameworks/av
 cdv frameworks/av
 git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/17/27017/2 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/17/27017/3 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto frameworks/base

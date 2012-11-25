@@ -37,6 +37,6 @@ Build
 =====
 ```
 . build/envsetup.sh
-breakfast cm_d710-userdebug
+breakfast d710
 make -j4 bacon
 ```

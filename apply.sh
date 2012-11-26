@@ -51,30 +51,30 @@ repo abandon auto
 set -e
 
 ################ Apply Patches Below ####################
-repo start auto frameworks/native
-echo "samsung stuff"
-cdv frameworks/native
-git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/18/27018/2 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto frameworks/native
+#echo "samsung stuff"
+#cdv frameworks/native
+#git reset --hard
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/18/27018/2 && git cherry-pick FETCH_HEAD
+#cdb
 
-repo start auto hardware/samsung
-cdv hardware/samsung
-git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_samsung refs/changes/23/27023/12 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto hardware/samsung
+#cdv hardware/samsung
+#git reset --hard
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_samsung refs/changes/23/27023/12 && git cherry-pick FETCH_HEAD
+#cdb
 
-repo start auto hardware/libhardware
-cdv hardware/libhardware
-git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_libhardware refs/changes/20/27020/2 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto hardware/libhardware
+#cdv hardware/libhardware
+#git reset --hard
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_libhardware refs/changes/20/27020/2 && git cherry-pick FETCH_HEAD
+#cdb
 
-repo start auto frameworks/av
-cdv frameworks/av
-git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/17/27017/5 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto frameworks/av
+#cdv frameworks/av
+#git reset --hard
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/17/27017/5 && git cherry-pick FETCH_HEAD
+#cdb
 
 repo start auto frameworks/base
 cdv frameworks/base
@@ -82,7 +82,7 @@ git reset --hard
 git clean -fd
 http_patch http://chris41g.devphone.org/patches/debug.patch
 http_patch http://chris41g.devphone.org/patches/moar.patch
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/55/27055/1 && git cherry-pick FETCH_HEAD
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/55/27055/1 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto device/samsung/galaxys2-common

@@ -58,17 +58,17 @@ set -e
 #git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/18/27018/2 && git cherry-pick FETCH_HEAD
 #cdb
 
-#repo start auto hardware/samsung
-#cdv hardware/samsung
-#git reset --hard
-#git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_samsung refs/changes/23/27023/12 && git cherry-pick FETCH_HEAD
-#cdb
+repo start auto hardware/samsung
+cdv hardware/samsung
+git reset --hard
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_samsung refs/changes/23/27023/12 && git cherry-pick FETCH_HEAD
+cdb
 
-#repo start auto hardware/libhardware
-#cdv hardware/libhardware
-#git reset --hard
-#git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_libhardware refs/changes/20/27020/2 && git cherry-pick FETCH_HEAD
-#cdb
+repo start auto hardware/libhardware
+cdv hardware/libhardware
+git reset --hard
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_libhardware refs/changes/20/27020/2 && git cherry-pick FETCH_HEAD
+cdb
 
 #repo start auto frameworks/av
 #cdv frameworks/av

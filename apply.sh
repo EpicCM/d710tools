@@ -61,7 +61,7 @@ cdb
 repo start auto frameworks/av
 cdv frameworks/av
 git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/17/27017/5 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_av refs/changes/17/27017/6 && git cherry-pick FETCH_HEAD
 cdb
 
 repo start auto frameworks/base

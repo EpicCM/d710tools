@@ -79,13 +79,6 @@ git reset --hard
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_galaxys2-common refs/changes/33/27033/3 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto packages/apps/Phone
-cdv packages/apps/Phone
-git reset --hard
-git clean -fd
-http_patch http://chris41g.devphone.org/patches/mr1Phone.patch
-cdb
-
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

@@ -55,7 +55,7 @@ set -e
 #repo start auto hardware/samsung
 #cdv hardware/samsung
 #git reset --hard
-#git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_samsung refs/changes/23/27023/13 && git cherry-pick FETCH_HEAD
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_hardware_samsung refs/changes/23/27023/14 && git cherry-pick FETCH_HEAD
 #cdb
 
 repo start auto frameworks/av

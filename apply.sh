@@ -74,6 +74,13 @@ git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs
 #http_patch http://chris41g.devphone.org/patches/moar.patch
 cdb
 
+repo start auto frameworks/native
+cdv frameworks/native
+git reset --hard
+git clean -fd
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_native refs/changes/92/27292/1 && git cherry-pick FETCH_HEAD
+cdb
+
 repo start auto device/samsung/galaxys2-common
 cdv device/samsung/galaxys2-common
 git reset --hard

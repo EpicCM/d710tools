@@ -69,7 +69,7 @@ cdv frameworks/base
 git reset --hard
 git clean -fd
 http_patch http://chris41g.devphone.org/patches/debug.patch
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/17/26917/5 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/17/26917/6 && git cherry-pick FETCH_HEAD
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/66/27066/1 && git cherry-pick FETCH_HEAD
 #http_patch http://chris41g.devphone.org/patches/moar.patch
 cdb

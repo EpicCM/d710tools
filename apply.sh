@@ -103,6 +103,13 @@ git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telep
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/18/26918/3 && git cherry-pick FETCH_HEAD
 cdb
 
+repo start auto device/common
+cdv device/common
+git reset --hard
+git clean -fd
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_common refs/changes/53/26953/2 && git cherry-pick FETCH_HEAD
+cdb
+
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

@@ -68,7 +68,7 @@ repo start auto frameworks/base
 cdv frameworks/base
 git reset --hard
 git clean -fd
-http_patch http://chris41g.devphone.org/patches/debug.patch
+#http_patch http://chris41g.devphone.org/patches/debug.patch
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/17/26917/6 && git cherry-pick FETCH_HEAD
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_base refs/changes/66/27066/1 && git cherry-pick FETCH_HEAD
 #http_patch http://chris41g.devphone.org/patches/moar.patch
@@ -87,12 +87,12 @@ git reset --hard
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_device_samsung_galaxys2-common refs/changes/33/27033/3 && git cherry-pick FETCH_HEAD
 cdb
 
-repo start auto packages/apps/Phone
-cdv packages/apps/Phone
-git reset --hard
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Phone refs/changes/83/27183/1 && git cherry-pick FETCH_HEAD
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Phone refs/changes/73/27073/2 && git cherry-pick FETCH_HEAD
-cdb
+#repo start auto packages/apps/Phone
+#cdv packages/apps/Phone
+#git reset --hard
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Phone refs/changes/83/27183/1 && git cherry-pick FETCH_HEAD
+#git fetch http://review.cyanogenmod.org/CyanogenMod/android_packages_apps_Phone refs/changes/73/27073/2 && git cherry-pick FETCH_HEAD
+#cdb
 
 repo start auto frameworks/opt/telephony
 cdv frameworks/opt/telephony
@@ -100,7 +100,9 @@ git reset --hard
 git clean -fd
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/91/27291/3 && git cherry-pick FETCH_HEAD
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/93/27293/2 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/18/26918/3 && git cherry-pick FETCH_HEAD
 cdb
+
 ##### SUCCESS ####
 SUCCESS=true
 exit 0

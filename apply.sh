@@ -99,7 +99,7 @@ cdv frameworks/opt/telephony
 git reset --hard
 git clean -fd
 git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/91/27291/3 && git cherry-pick FETCH_HEAD
-git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/93/27293/1 && git cherry-pick FETCH_HEAD
+git fetch http://review.cyanogenmod.org/CyanogenMod/android_frameworks_opt_telephony refs/changes/93/27293/2 && git cherry-pick FETCH_HEAD
 cdb
 ##### SUCCESS ####
 SUCCESS=true

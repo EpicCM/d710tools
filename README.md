@@ -1,10 +1,11 @@
-Epic Build Instructions
+d710 Build Instructions
 =======================
 ```
-mkdir -p android/CM
-cd android/CM
+mkdir -p android/CM9
+cd android/CM9
 repo init -u git://github.com/CyanogenMod/android.git -b ics
 ```
+You will need to get the d710 proprietary files. Run the extract script from a current working CM9 build 
 
 Modify your `.repo/local_manifest.xml` as follows:
 
@@ -36,5 +37,5 @@ d710tools/apply.sh
 Build
 =====
 ```
-. build/envsetup.sh && brunch d710
+. build/envsetup.sh && brunch cm_d710-userdebug
 ```

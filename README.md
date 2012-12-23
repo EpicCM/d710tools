@@ -18,6 +18,7 @@ Modify your `.repo/local_manifest.xml` as follows:
     <project name="EpicAOSP/android_kernel_samsung_smdk4210_new" path="kernel/samsung/smdk4210" remote="github" revision="ics" />
     <project name="mcrosson/android_packages_apps_CMFileManager" path="packages/apps/CMFileManager" remote="github" revision="ics" />
     <project name="CyanogenMod/android_packages_apps_SamsungServiceMode" path="packages/apps/SamsungServiceMode" remote="github" revision="ics" />
+    <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="ics"
   </manifest>
 ```
 

@@ -17,6 +17,7 @@ Modify your `.repo/local_manifest.xml` as follows:
   <project name="CyanogenMod/android_hardware_samsung" path="hardware/samsung" remote="github" revision="jellybean" />
   <project name="EpicAOSP/android_kernel_samsung_smdk4210_new" path="kernel/samsung/smdk4210" remote="github" revision="jb-dev" />
   <project name="CyanogenMod/android_packages_apps_SamsungServiceMode" path="packages/apps/SamsungServiceMode" remote="github" revision="jellybean" />
+  <project name="TheMuppets/proprietary_vendor_samsung" path="vendor/samsung" remote="github" revision="jellybean"
 </manifest>
 ```
 
